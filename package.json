@@ -1,9 +1,9 @@
 {
 	"name": "dhost",
 	"displayName": "DHost",
-	"description": "Publish static websites to IPFS",
+	"description": "Instantly publish static websites to IPFS",
 	"publisher": "DHost",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.65.0"
 	},
