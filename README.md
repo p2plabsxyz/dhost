@@ -4,6 +4,13 @@
 
 <h1 align="center">DHost</h1>
 
+<div align="center">
+    <img src="https://img.shields.io/vscode-marketplace/v/DHost.dhost.svg?style=flat-square&color=blue&label=vscode%20marketplace" alt="Version" />
+    <img src="https://img.shields.io/vscode-marketplace/d/DHost.dhost.svg?style=flat-square&color=green&label=installs" alt="Installs"/>
+    <img src="https://img.shields.io/vscode-marketplace/r/DHost.dhost.svg?style=flat-square&color=green&label=rating" alt="Rating"/>
+    <img src="https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square" alt="License">
+</div><br>
+
 <p align="center">DHost vscode extension allows you to instantly publish static websites to <a href="https://ipfs.io/">IPFS</a> by using <a href="https://web3.storage/">web3.storage</a>. Now you can publish and share your websites quickly with anyone in the world!</p>
 
 <p align="center"><img align="center" src="/images/demo.gif"></img></p>
