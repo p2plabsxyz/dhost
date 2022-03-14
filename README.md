@@ -24,6 +24,8 @@
 * ✅ Secure (Share IPFS links instead of IP Addresses)
 * ✅ Free to use
 
+*DHost even supports build directory uploads (production build of the app made with react.js, vue.js, etc.)*
+
 ## Steps to use
 Open command palette
 * Windows & Linux: `Ctrl + Shift + P`
