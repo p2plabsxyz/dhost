@@ -53,11 +53,13 @@ After publishing successfully, it'll show the IPFS `CID` of your website and an 
 
 <img align="center" src="/images/published.png"></img>
 
+If you have any queries, then create a [discussion thread](https://github.com/buidltools/support/discussions).
+
 ## Working
 DHost uses web3.storage, basically it makes the content available over IPFS and permanently pins the content with the help of [Filecoin](https://filecoin.io/) infrastructure. Read more about web3.storage and how it works [here](https://web3.storage/about/).
 We have our separate DHost API Token on web3.storage, it allows up to 1TB of content pinning, after that we can request more storage for our respective use.
 
-After uploading your website to IPFS, web3.storage returns a [CID](https://docs.ipfs.io/concepts/content-addressing/) `Qmeq5NxNX644KHNji..`, which is a hash for an array of files stored on IPFS, and that later is combined with IPFS gateway link `https://ipfs.infura.io/ipfs/` to access the content.
+After uploading your website to IPFS, web3.storage returns a [CID](https://docs.ipfs.io/concepts/content-addressing/) `Qmeq5NxNX644KHNji..`, which is a hash for an array of files stored on IPFS, and that later is combined with IPFS gateway link `https://ipfs.infura.io/ipfs/` to access the website.
 
 ## License
 DHost is licensed under the [MIT License](https://github.com/buidltools/vscode-dhost/blob/main/LICENSE).
