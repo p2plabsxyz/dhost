@@ -11,18 +11,18 @@
     <img src="https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square" alt="License">
 </div><br>
 
-<p align="center">DHost vscode extension allows you to instantly publish static websites to <a href="https://ipfs.io/">IPFS</a> by using <a href="https://web3.storage/">web3.storage</a>. Now you can publish and share your websites quickly with anyone in the world!</p>
+<p align="center">DHost VS Code Extension allows you to instantly publish static websites to <a href="https://ipfs.io/">IPFS</a> by using <a href="https://web3.storage/">web3.storage</a>. Now you can publish and share your websites quickly with anyone in the world!</p>
 
 <p align="center"><img align="center" src="/images/demo.gif"></img></p>
 
 ## Features
-* ✅ Decentralized
-* ✅ Instant hosting (Publish your website with just 2 commands)
-* ✅ Unlimited uploads
-* ✅ Accessible to anyone
-* ✅ Permanent storage (web.storage helps to permanently pin your content)
-* ✅ Secure (Share IPFS links instead of IP Addresses)
-* ✅ Free to use
+* ✅ **Decentralized**
+* ✅ **Instant hosting** (Publish your website with just 2 commands)
+* ✅ **Unlimited uploads**
+* ✅ **Accessible to anyone**
+* ✅ **Permanent storage** (web3.storage helps to permanently pin your content)
+* ✅ **Secure** (Share IPFS links instead of IP Address and host for development)
+* ✅ **Free** to use
 
 *DHost even supports build directory uploads (production build of the app made with react.js, vue.js, etc.)*
 
