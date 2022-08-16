@@ -62,7 +62,7 @@ function activate(context) {
             );
             if (result === "Open the website") {
               vscode.env.openExternal(
-                vscode.Uri.parse(`https://ipfs.infura.io/ipfs/${cid}/`)
+                vscode.Uri.parse(`https://dweb.link/ipfs/${cid}/`)
               );
             }
           };
