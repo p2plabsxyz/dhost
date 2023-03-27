@@ -65,4 +65,4 @@ After uploading your website to IPFS, web3.storage returns a [CID](https://docs.
 DHost is licensed under the [MIT License](https://github.com/buidltools/vscode-dhost/blob/main/LICENSE).
 
 <hr>
-Don't forget to leave a star ⭐️ ~ <a href="https://twitter.com/buidltools" target="_blank"><img src="https://img.shields.io/twitter/follow/buidltools?style=social" alt="twitter" /></a>
+Don't forget to leave a star ⭐️ ~ <a href="https://twitter.com/p2plabs_xyz" target="_blank"><img src="https://img.shields.io/twitter/follow/p2plabs_xyz?style=social" alt="twitter" /></a>
