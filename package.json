@@ -17,12 +17,18 @@
 	],
 	"icon": "images/logo.png",
 	"activationEvents": [
+		"onCommand:dhost.token",
 		"onCommand:dhost.select",
 		"onCommand:dhost.publish"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
+			{
+				"command": "dhost.token",
+				"title": "web3.storage API token",
+				"category": "DHost"
+			},
 			{
 				"command": "dhost.select",
 				"title": "Select folder",

@@ -4,6 +4,7 @@ const { Web3Storage } = require("web3.storage");
 const dotenv = require("dotenv");
 const { selectFolder } = require("./options");
 const { getFilesFromPath } = require("files-from-path");
+const fs = require("fs");
 
 // Environment variable paths
 const folderPath = __dirname + "/.folderPath.env";
@@ -12,8 +13,10 @@ const apiToken = __dirname + "/.env";
 dotenv.config({ path: apiToken });
 
 // web3.storage API token
-const token = process.env.API_TOKEN;
-const client = new Web3Storage({ token });
+function getToken() {
+  return process.env.API_TOKEN;
+}
+const client = new Web3Storage({ token: getToken() });
 
 // Get files from path
 async function getFiles(path) {
@@ -28,10 +31,45 @@ async function getFiles(path) {
   return files;
 }
 
+// Validate web3.storage API token
+function isValidWeb3StorageApiKey(apiKey) {
+  const pattern = /^eyJ[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+$/;
+  return pattern.test(apiKey);
+}
+
+// Set web3.storage API token
+async function setApiToken() {
+  const userToken = await vscode.window.showInputBox({
+    placeHolder: "Enter your web3.storage API token",
+    prompt: "API Token",
+    ignoreFocusOut: true,
+  });
+
+  if (userToken && isValidWeb3StorageApiKey(userToken)) {
+    process.env.API_TOKEN = userToken;
+    try {
+      fs.writeFileSync(apiToken, `API_TOKEN=${userToken}`);
+      vscode.window.showInformationMessage("API token saved!");
+    } catch (e) {
+      console.log(e);
+    }
+  } else {
+    vscode.window.showWarningMessage(
+      "Invalid API key. Please enter a valid web3.storage API key."
+    );
+  }
+}
+
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
+  // Set web3.storage API token
+  context.subscriptions.push(
+    vscode.commands.registerCommand("dhost.token", async () => {
+      await setApiToken();
+    })
+  );
   // Select folder
   context.subscriptions.push(
     vscode.commands.registerCommand("dhost.select", async () => {
@@ -54,16 +92,32 @@ function activate(context) {
             // Get files
             const files = await getFiles(path);
             // Upload to IPFS and return a CID
-            const cid = await client.put(files);
-            progress.report({ increment: 100 });
-            const result = await vscode.window.showInformationMessage(
-              `Successfully published! Here's the IPFS CID of your website: ${cid}`,
-              "Open the website"
-            );
-            if (result === "Open the website") {
-              vscode.env.openExternal(
-                vscode.Uri.parse(`https://dweb.link/ipfs/${cid}/`)
+            try {
+              const cid = await client.put(files);
+              progress.report({ increment: 100 });
+              const result = await vscode.window.showInformationMessage(
+                `Successfully published! Here's the IPFS CID of your website: ${cid}`,
+                "Open the website"
               );
+              if (result === "Open the website") {
+                vscode.env.openExternal(
+                  vscode.Uri.parse(`https://w3s.link/ipfs/${cid}/`)
+                );
+              }
+            } catch (e) {
+              const message =
+                "Please submit your valid web3.storage API token using the 'dhost.token' command before publishing the website. Instructions are provided on the extension homepage.";
+              const action = {
+                title: "Set API token",
+                command: "dhost.token",
+              };
+              const selectedAction = await vscode.window.showWarningMessage(
+                message,
+                action
+              );
+              if (selectedAction === action) {
+                await vscode.commands.executeCommand("dhost.token");
+              }
             }
           };
           await publish();
