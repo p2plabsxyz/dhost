@@ -8,9 +8,9 @@
 		"vscode": "^1.65.0"
 	},
 	"author": {
-		"name": "BUIDL Tools",
-		"email": "info@buidltools.com",
-		"url": "https://twitter.com/buidltools"
+		"name": "P2P Labs",
+		"email": "contact@p2plabs.xyz",
+		"url": "https://twitter.com/p2plabs_xyz"
 	},
 	"categories": [
 		"Other"
@@ -37,7 +37,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/buidltools/vscode-dhost.git"
+		"url": "https://github.com/p2plabsxyz/vscode-dhost.git"
 	},
 	"scripts": {
 		"lint": "eslint .",
