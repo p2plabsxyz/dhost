@@ -34,7 +34,7 @@ Now, to enter your web3.storage API token, type `dhost.token` command.
 
 <img align="center" src="/images/token_command.png"></img>
 
-Enter your web3.storage API token:
+Paste the copied web3.storage API token here:
 
 <img align="center" src="/images/enter_token.png"></img>
 
