@@ -15,32 +15,45 @@
 
 <p align="center"><img align="center" src="/images/demo.gif"></img></p>
 
-## Features
-* ✅ **Decentralized**
-* ✅ **Instant hosting** (Publish your website with just 2 commands)
-* ✅ **Unlimited uploads**
-* ✅ **Accessible to anyone**
-* ✅ **Permanent storage** (web3.storage helps to permanently pin your content)
-* ✅ **Secure** (Share IPFS links instead of IP Address and host for development)
-* ✅ **Free** to use
-
-*DHost even supports build directory uploads (production build of the app made with react.js, vue.js, etc.)*
-
 ## Steps to use
-Open command palette
-* Windows & Linux: `Ctrl + Shift + P`
-* MacOS: `Command + Shift + P`
 
-### 1. Select the folder
+Open command palette
+
+- Windows & Linux: `Ctrl + Shift + P`
+- MacOS: `Command + Shift + P`
+
+### 1. Submit web3.storage API key
+
+First, generate the web3.storage API key:
+
+- Go to [web3.storage](https://web3.storage/) and Sign In.
+- Click on Accounts and select Create an API Token.
+- Copy the API Token and paste it in the input field.
+
+Now, to enter your web3.storage API token, type `dhost.token` command.
+
+<img align="center" src="/images/token_command.png"></img>
+
+Enter your web3.storage API token:
+
+<img align="center" src="/images/enter_token.png"></img>
+
+On entering the API key, the "API token saved!" popup will appear.
+
+<img align="center" src="/images/token_saved.png"></img>
+
+### 2. Select the folder
+
 Select the folder of your static website by `dhost.select` command.
 
 <img align="center" src="/images/select_command.png"></img>
 
-After selecting the folder, the "Folder selected!" popup will appear.
+After selecting folder, the "Folder selected!" popup will appear.
 
 <img align="center" src="/images/folder_selected.png"></img>
 
-### 2. Publish to IPFS
+### 3. Publish to IPFS
+
 Now, publish your static website by `dhost.publish` command.
 
 <img align="center" src="/images/publish_command.png"></img>
@@ -53,16 +66,11 @@ After publishing successfully, it'll show the IPFS `CID` of your website and an 
 
 <img align="center" src="/images/published.png"></img>
 
-If you have any queries, then create a [discussion thread](https://github.com/buidltools/support/discussions).
-
-## Working
-DHost uses web3.storage, basically it makes the content available over IPFS and permanently pins the content with the help of [Filecoin](https://filecoin.io/) infrastructure. Read more about web3.storage and how it works [here](https://web3.storage/about/).
-We have our separate DHost API Token on web3.storage, it allows up to 1TB of content pinning, after that we can request more storage for our respective use.
-
-After uploading your website to IPFS, web3.storage returns a [CID](https://docs.ipfs.io/concepts/content-addressing/) `Qmeq5NxNX644KHNji..`, which is a hash for an array of files stored on IPFS, and that later is combined with IPFS gateway link `https://dweb.link/ipfs/` to access the website.
+If you have any queries, then create a [discussion thread](https://github.com/p2plabsxyz/support/discussions).
 
 ## License
-DHost is licensed under the [MIT License](https://github.com/buidltools/vscode-dhost/blob/main/LICENSE).
+
+DHost is licensed under the [MIT License](https://github.com/p2plabsxyz/dhost/blob/main/LICENSE).
 
 <hr>
 Don't forget to leave a star ⭐️ ~ <a href="https://twitter.com/p2plabs_xyz" target="_blank"><img src="https://img.shields.io/twitter/follow/p2plabs_xyz?style=social" alt="twitter" /></a>
