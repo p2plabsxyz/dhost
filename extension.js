@@ -16,7 +16,6 @@ dotenv.config({ path: apiToken });
 function getToken() {
   return process.env.API_TOKEN;
 }
-const client = new Web3Storage({ token: getToken() });
 
 // Get files from path
 async function getFiles(path) {
@@ -50,6 +49,8 @@ async function setApiToken() {
     try {
       fs.writeFileSync(apiToken, `API_TOKEN=${userToken}`);
       vscode.window.showInformationMessage("API token saved!");
+      // Set web3.storage API token
+      const client = new Web3Storage({ token: getToken() });
     } catch (e) {
       console.log(e);
     }
@@ -91,6 +92,8 @@ function activate(context) {
           let publish = async () => {
             // Get files
             const files = await getFiles(path);
+            // Set web3.storage API token
+            const client = new Web3Storage({ token: getToken() });
             // Upload to IPFS and return a CID
             try {
               const cid = await client.put(files);
