@@ -3,7 +3,7 @@
 	"displayName": "DHost",
 	"description": "Instantly publish static websites to IPFS",
 	"publisher": "DHost",
-	"version": "0.1.2",
+	"version": "0.2.1",
 	"engines": {
 		"vscode": "^1.65.0"
 	},
