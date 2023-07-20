@@ -2,7 +2,7 @@
 const vscode = require("vscode");
 const { Web3Storage } = require("web3.storage");
 const dotenv = require("dotenv");
-const { selectFolder } = require("./options");
+const { selectFolder, getCurrentWorkspaceFolderPath } = require("./options");
 const { getFilesFromPath } = require("files-from-path");
 const fs = require("fs");
 
@@ -71,6 +71,16 @@ function activate(context) {
       await setApiToken();
     })
   );
+  // Check if the folderPath.env file exists, and if so, set the folder path from it.
+  if (fs.existsSync(folderPath)) {
+    dotenv.config({ path: folderPath });
+  }
+
+  // If VSCode workspace folder is already defined, set it as the default folder path.
+  const defaultFolderPath = getCurrentWorkspaceFolderPath();
+  if (defaultFolderPath) {
+    process.env.FOLDER_PATH = defaultFolderPath;
+  }
   // Select folder
   context.subscriptions.push(
     vscode.commands.registerCommand("dhost.select", async () => {

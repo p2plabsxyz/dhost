@@ -1,4 +1,4 @@
-const { window } = require("vscode");
+const { window, workspace } = require("vscode");
 const fs = require("fs");
 const folderPath = __dirname + "/.folderPath.env";
 
@@ -26,6 +26,13 @@ async function selectFolder() {
   }
 }
 
+// Function to get the current workspace folder path or undefined if not available
+function getCurrentWorkspaceFolderPath() {
+  const folders = workspace.workspaceFolders;
+  return folders && folders.length > 0 ? folders[0].uri.fsPath : undefined;
+}
+
 module.exports = {
-  selectFolder
+  selectFolder,
+  getCurrentWorkspaceFolderPath,
 };
