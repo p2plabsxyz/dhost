@@ -1,3 +1,4 @@
+// options.js
 const { window, workspace } = require("vscode");
 const fs = require("fs");
 const folderPath = __dirname + "/.folderPath.env";
@@ -13,16 +14,32 @@ async function selectFolder() {
   const fileUri = await window.showOpenDialog(options);
   if (fileUri && fileUri[0]) {
     let selectFolderPath = fileUri[0].fsPath;
-    process.env.FOLDER_PATH = selectFolderPath;
-    try {
-      fs.writeFileSync(folderPath, `FOLDER_PATH=${selectFolderPath}`);
-      window.showInformationMessage(`Folder selected!`);
-    } catch (e) {
-      console.log(e);
+    if (isFolderEmpty(selectFolderPath)) {
+      window.showWarningMessage(
+        "Selected folder is empty. Please select a valid folder!"
+      );
+    } else {
+      process.env.FOLDER_PATH = selectFolderPath;
+      try {
+        fs.writeFileSync(folderPath, `FOLDER_PATH=${selectFolderPath}`);
+        window.showInformationMessage(`Folder selected!`);
+      } catch (e) {
+        console.log(e);
+      }
     }
   } else {
     let message = "Folder not found! Please try again.";
     window.showInformationMessage(message);
+  }
+}
+
+// Function to check if a folder is empty
+function isFolderEmpty(path) {
+  try {
+    const files = fs.readdirSync(path);
+    return files.length === 0;
+  } catch (error) {
+    return true;
   }
 }
 
