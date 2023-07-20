@@ -42,9 +42,13 @@ On entering the API key, the "API token saved!" popup will appear.
 
 <img align="center" src="/images/token_saved.png"></img>
 
-### 2. Select the folder
+### 2. Select the folder (optional)
 
-Select the folder of your static website by `dhost.select` command.
+The extension automatically sets the deafault folder as your current VS Code worskspace folder.
+
+OR
+
+You can manually select the folder of your static website by `dhost.select` command.
 
 <img align="center" src="/images/select_command.png"></img>
 
