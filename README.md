@@ -44,7 +44,7 @@ On entering the API key, the "API token saved!" popup will appear.
 
 ### 2. Select the folder (optional)
 
-The extension automatically sets the deafault folder as your current VS Code worskspace folder.
+The extension automatically sets the default folder as your current VS Code worskspace folder.
 
 OR
 
